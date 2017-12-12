@@ -128,3 +128,10 @@ Docker equivalent: docker rmi $(docker images -q)
 Example call
 
  curl -s -X DELETE -H 'Accept: application/json' http://localhost:8080/container/
+ 
+ 
+ # Running NGINX as service in Docker Swarm
+ 
+ docker service create -d --replicas 3 -p 80:80 nginx
+ 
+Creates a service running 3 replicas. Is detached from the terminal. Redirects traffic received on port 80 to port 80 in the service. Uses image nginx
